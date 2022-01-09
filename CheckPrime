@@ -1,0 +1,18 @@
+#!/bin/bash -x
+
+read -p "Enter the number: " number
+
+function prime(){
+	for (( i=2; i <=$number/2; i++ ))
+	do
+		n1=$(( $number%$i ))
+		if [ $n1 -eq 0 ]
+		then
+			echo "it is not prime"
+			exit
+		fi
+	done
+	echo "It is prime"
+}
+prime $number
+
